@@ -1,0 +1,46 @@
+{
+  "name": "ffflip-sol",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "dev:api": "tsx server/dev.ts",
+    "dev:all": "concurrently -k -n web,api \"pnpm dev\" \"pnpm dev:api\"",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test \"server/*.test.ts\" \"src/**/*.test.ts\""
+  },
+  "dependencies": {
+    "@solana/wallet-adapter-base": "^0.9.23",
+    "@solana/wallet-adapter-phantom": "^0.9.24",
+    "@solana/wallet-adapter-react": "^0.15.35",
+    "@solana/wallet-adapter-react-ui": "^0.9.35",
+    "@solana/wallet-adapter-solflare": "^0.6.28",
+    "@solana/web3.js": "^1.95.3",
+    "buffer": "^6.0.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "bs58": "^6.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "18.3.12",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "typescript": "^5.5.4",
+    "vite": "^5.4.2",
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "concurrently": "^9.0.0"
+  },
+  "packageManager": "pnpm@10.28.0",
+  "engines": {
+    "node": ">=20"
+  },
+  "pnpm": {
+    "overrides": {
+      "@types/react": "18.3.12"
+    }
+  }
+}
